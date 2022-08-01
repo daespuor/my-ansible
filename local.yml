@@ -1,0 +1,24 @@
+- hosts: localhost
+  become: true
+  pre_tasks:
+    - name: Update System
+      apt:
+        update_cache: true
+      tags:
+        - brew
+        - node
+        - zsh
+        - install
+        - yabai
+        - stow
+        - dotfiles
+        - tmux
+        - brave
+  tasks:
+    - include: ./tasks/brew.yml
+    - include: ./tasks/dotfiles.yml
+    - include: ./tasks/node.yml
+    - include: ./tasks/zsh.yml
+    - include: ./tasks/yabai.yml
+    - include: ./tasks/tmux.yml
+    - include: ./tasks/brave.yml

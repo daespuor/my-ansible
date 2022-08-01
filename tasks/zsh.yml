@@ -1,0 +1,20 @@
+- name: Install zsh
+  apt: name=zsh
+  tags:
+    - zsh
+    - install
+- name: Which zsh
+  shell: chsh -s `which zsh` # when typing this I did chsh zsh
+  tags:
+    - zsh
+    - install
+- name: Install oh-my-zsh
+  shell: curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+  tags:
+    - zsh
+    - install
+- name: update our zshrc
+  shell: sed -i 's/(git/(git npm' ~/.zshrc && source ~/.zshrc
+  tags:
+    - zsh
+    - install

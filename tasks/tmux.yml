@@ -1,0 +1,5 @@
+- name: Install brew
+  shell: brew install tmux
+  tags:
+    - tmux
+    - install

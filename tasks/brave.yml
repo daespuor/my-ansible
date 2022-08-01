@@ -1,0 +1,6 @@
+- name: Brave Browser apt installation
+  become: true
+  shell: brew install --cask brave-browser
+  tags:
+    - brave
+    - install

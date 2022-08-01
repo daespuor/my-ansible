@@ -1,0 +1,15 @@
+- name: Install yabai
+  shell: brew install koekeishiya/formulae/yabai
+  tags:
+    - install
+    - yabai
+- name: Install jq a flexible command line JSON processor
+  shell: brew install jq
+  tags:
+    - install
+    - yabai
+- name: Install skhd simple hot key deamon for MacOs
+  shell: brew install koekeishiya/formulae/skhd
+  tags:
+    - install
+    - yabai
