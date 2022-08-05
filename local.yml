@@ -1,14 +1,5 @@
 ---
 - hosts: localhost
-  pre_tasks:
-      tags:
-        - brew
-        - node
-        - zsh
-        - install
-        - yabai
-        - stow
-        - dotfiles
   tasks:
     - include: ./tasks/brew.yml
     - include: ./tasks/brew-install.yml
