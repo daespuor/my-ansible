@@ -39,7 +39,7 @@
     - docker
     - slack
     - visual-studio-code
-    - brave
+    - brave-browser
   tags:
     - install
     - brew

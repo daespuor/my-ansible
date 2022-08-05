@@ -2,3 +2,4 @@
 - hosts: localhost
   tasks:
     - include: ./tasks/brew.yml
+    - include: ./tasks/dotfiles.yml
