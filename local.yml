@@ -2,9 +2,3 @@
 - hosts: localhost
   tasks:
     - include: ./tasks/brew.yml
-    - include: ./tasks/brew-install.yml
-    - include: ./tasks/brew-cask-install.yml
-    - include: ./tasks/dotfiles.yml
-    - include: ./tasks/node.yml
-    - include: ./tasks/zsh.yml
-    - include: ./tasks/yabai.yml
