@@ -1,15 +1,14 @@
  - name: Install core packages via brew casks
-    community.general.homebrew_cask:
-      name: "{{ item }}"
-    ignore_errors: yes
-    with_items:
-      - docker
-      - google-chrome
-      - google-cloud-sdk
-      - slack
-      - visual-studio-code
-      - zoom
-      - brave
-    tags:
-      - brew
-      - install
+   community.general.homebrew_cask:
+    name: "{{ item }}"
+   ignore_errors: yes
+   with_items:
+    - docker
+    - google-chrome
+    - google-cloud-sdk
+    - slack
+    - visual-studio-code
+    - zoom
+    - brave
+   tags:
+    - install
