@@ -21,7 +21,7 @@
       'libtool',
       'libxslt',
       'libyaml',
-      'stow'
+      'stow',
       'tmux',
       'unzip',
       'vim',
