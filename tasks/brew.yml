@@ -29,6 +29,7 @@
     ]
     state: present
     update_homebrew: yes
+    become: true
   tags:
     - brew
     - install
