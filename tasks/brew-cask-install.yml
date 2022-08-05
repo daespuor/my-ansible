@@ -11,4 +11,5 @@
     - zoom
     - brave
    tags:
-    - install
+      - install
+      - brew
