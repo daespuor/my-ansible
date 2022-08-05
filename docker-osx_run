@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+IP=$(/usr/sbin/ipconfig getifaddr en0)
+echo $IP
+
+/opt/X11/bin/xhost + "$IP"
+
+docker run -it \
+    -p 50922:10022 \
+    -v /tmp/.X11-unix:/tmp/.X11-unix \
+    -e DISPLAY="${IP}:0" \
+    sickcodes/docker-osx:big-sur

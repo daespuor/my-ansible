@@ -1,9 +1,5 @@
 - hosts: localhost
-  become: true
   pre_tasks:
-    - name: Update System
-      apt:
-        update_cache: true
       tags:
         - brew
         - node
@@ -12,13 +8,11 @@
         - yabai
         - stow
         - dotfiles
-        - tmux
-        - brave
   tasks:
     - include: ./tasks/brew.yml
+    - include: ./tasks/brew-install.yml
+    - include: ./tasks/brew-cask-install.yml
     - include: ./tasks/dotfiles.yml
     - include: ./tasks/node.yml
     - include: ./tasks/zsh.yml
     - include: ./tasks/yabai.yml
-    - include: ./tasks/tmux.yml
-    - include: ./tasks/brave.yml

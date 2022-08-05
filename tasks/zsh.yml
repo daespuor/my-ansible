@@ -1,5 +1,6 @@
 - name: Install zsh
-  apt: name=zsh
+  community.general.homebrew:
+    name: ['zsh']
   tags:
     - zsh
     - install

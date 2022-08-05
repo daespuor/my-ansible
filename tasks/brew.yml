@@ -1,6 +1,16 @@
 - name: Install brew
-  shell: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  include_role:
+    name: geerlingguy.mac.homebrew
   tags:
     - brew
     - install
-    - yabai
+- name: Make sure homebrew bin is in path
+    ansible.builtin.lineinfile:
+      path: /etc/paths
+      state: present
+      line: '/opt/homebrew/bin'
+    become: true
+    become_user: root
+    tags:
+      - brew
+      - install

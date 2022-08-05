@@ -1,15 +1,22 @@
 - name: Install yabai
-  shell: brew install koekeishiya/formulae/yabai
+  community.general.homebrew:
+      name: ['koekeishiya/formulae/yabai']
   tags:
     - install
     - yabai
 - name: Install jq a flexible command line JSON processor
-  shell: brew install jq
+  community.general.homebrew:
+      name: ['jq']
   tags:
     - install
     - yabai
 - name: Install skhd simple hot key deamon for MacOs
-  shell: brew install koekeishiya/formulae/skhd
+  community.general.homebrew:
+      name: ['koekeishiya/formulae/skhd']
   tags:
     - install
     - yabai
+- name: Add permissions to scripts
+  shell: chmod +x ~/.config/skhd/scripts/*  
+- name: Run yabai and skhd
+  shell: chmod +x ~/.config/skhd/scripts/*

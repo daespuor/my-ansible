@@ -1,5 +1,7 @@
-FROM sickcodes/docker-osx:latest
-WORKDIR /usr/local/bin
-RUN /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" && brew install ansible
+FROM sickcodes/docker-osx:big-sur
+USER root
+COPY ./requirements.yml .
+COPY ./ansible_install .
+RUN chmod +x ./ansible_install && ./ansible_install
 COPY . .
 CMD ["sh", "-c", "ansible-playbook $TAGS local.yml"]
