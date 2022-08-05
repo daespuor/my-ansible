@@ -18,7 +18,7 @@
     - dotfiles
     - stow
 - name: Add permissions to macOx
-  shell: chmod +x {{ lookup('env', 'HOME') }}/dotfiles/macOx
+  shell: find {{ lookup('env', 'HOME') }}/dotfiles -type f -exec chmod +x {} \;
   become: true
 - name: Stow dotfiles
   shell: cd $HOME/dotfiles && ./macOx
