@@ -11,3 +11,35 @@
     line: '/opt/homebrew/bin'
   become: true
   become_user: root
+- name: "Install homebrew packages"
+  community.general.homebrew:
+    name: [
+      'coreutils',
+      'curl',
+      'fzf',
+      'gpg',
+      'libtool',
+      'libxslt',
+      'libyaml',
+      'tmux',
+      'unzip',
+      'vim',
+      'yarn',
+    ]
+    state: present
+    update_homebrew: yes
+  tags:
+    - brew
+    - install
+- name: Install core packages via brew casks
+  community.general.homebrew_cask:
+    name: "{{ item }}"
+  ignore_errors: yes
+  with_items:
+    - docker
+    - slack
+    - visual-studio-code
+    - brave
+  tags:
+    - install
+    - brew
