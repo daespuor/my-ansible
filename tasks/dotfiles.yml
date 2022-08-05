@@ -17,6 +17,9 @@
     - install
     - dotfiles
     - stow
+- name: Add permissions to macOx
+  shell: chmod +x $HOME/dotfiles/macOx
+  become: true
 - name: Stow dotfiles
   shell: cd $HOME/dotfiles && ./macOx
   tags:
