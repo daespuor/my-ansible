@@ -1,3 +1,10 @@
+- name: Installing stow
+  community.general.homebrew:
+      name: stow
+  tags:
+    - install
+    - dotfiles
+    - stow
 - name: Cloning .dotfiles
   ansible.builtin.git:
     repo: 'https://github.com/daespuor/dotfiles.git'

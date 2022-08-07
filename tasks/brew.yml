@@ -1,6 +1,9 @@
 - name: Install brew
   include_role:
     name: geerlingguy.mac.homebrew
+  apply:
+    environment:
+      PATH: '{{homebrew_install_path}}/bin:{{ ansible_env.PATH }}'
   tags:
     - brew
     - install
@@ -21,7 +24,6 @@
       'libtool',
       'libxslt',
       'libyaml',
-      'stow',
       'tmux',
       'unzip',
       'vim',
@@ -29,7 +31,6 @@
     ]
     state: present
     update_homebrew: yes
-    become: true
   tags:
     - brew
     - install
