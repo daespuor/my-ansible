@@ -19,7 +19,7 @@
   become: true
   become_user: root
 - name: Fix /usr/local/bin permissions
-  shell: chown -R ${whoami} /usr/local/var/homebrew
+  shell: chown -R $(whoami) /usr/local/bin
   become: true
   become_user: root
 - name: "Install homebrew packages"
