@@ -13,6 +13,8 @@
     - install
 - name: Install node 14
   shell: n 14
+  become: true
+  become_user: root
   tags:
     - node
     - install
