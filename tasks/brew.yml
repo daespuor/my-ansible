@@ -3,7 +3,7 @@
     name: geerlingguy.mac.homebrew
     apply:
       environment:
-        PATH: '{{homebrew_install_path}}/bin:{{ ansible_env.PATH }}'
+        PATH: '$PATH:{{homebrew_install_path}}/bin:{{homebrew_prefix}}/bin'
   tags:
     - brew
     - install
@@ -16,10 +16,6 @@
   become_user: root
 - name: Add brew to path
   shell: rm -f /usr/local/bin/brew &>/dev/null && ln -s /opt/homebrew/Homebrew/bin/brew /usr/local/bin
-  become: true
-  become_user: root
-- name: Fix /usr/local/bin permissions
-  shell: chown -R $(whoami) /usr/local/bin
   become: true
   become_user: root
 - name: "Install homebrew packages"
@@ -39,7 +35,6 @@
     ]
     state: present
     update_homebrew: yes
-    path: '/usr/local/bin'
   tags:
     - brew
     - install
