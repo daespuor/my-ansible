@@ -3,3 +3,4 @@
   tasks:
     - include: ./tasks/brew.yml
     - include: ./tasks/dotfiles.yml
+    - include: ./tasks/zsh.yml
