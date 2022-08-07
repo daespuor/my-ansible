@@ -14,8 +14,3 @@
   tags:
     - zsh
     - install
-- name: update our zshrc
-  shell: sed -i 's/(git/(git npm' ~/.zshrc && source ~/.zshrc
-  tags:
-    - zsh
-    - install
