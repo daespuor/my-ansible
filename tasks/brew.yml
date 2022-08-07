@@ -3,7 +3,7 @@
     name: geerlingguy.mac.homebrew
     apply:
       environment:
-        PATH: '$PATH:{{homebrew_install_path}}/bin:{{homebrew_prefix}}/bin'
+        PATH: '{{homebrew_install_path}}/bin:{{ ansible_env.PATH }}'
   tags:
     - brew
     - install
