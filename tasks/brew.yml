@@ -36,6 +36,8 @@
     state: present
     update_homebrew: yes
     path: '/usr/local/bin:/opt/homebrew/bin'
+    become: true
+    become_user: root
   tags:
     - brew
     - install
