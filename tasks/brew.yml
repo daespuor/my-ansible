@@ -18,6 +18,10 @@
   shell: rm -f /usr/local/bin/brew &>/dev/null && ln -s /opt/homebrew/Homebrew/bin/brew /usr/local/bin
   become: true
   become_user: root
+- name: Fix /usr/local/bin permissions
+  shell: chown -R ${whoami} /usr/local/var/homebrew
+  become: true
+  become_user: root
 - name: "Install homebrew packages"
   community.general.homebrew:
     name: [
