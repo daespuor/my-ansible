@@ -1,9 +1,9 @@
 - name: Install brew
   include_role:
     name: geerlingguy.mac.homebrew
-  apply:
-    environment:
-      PATH: '{{homebrew_install_path}}/bin:{{ ansible_env.PATH }}'
+    apply:
+      environment:
+        PATH: '{{homebrew_install_path}}/bin:{{ ansible_env.PATH }}'
   tags:
     - brew
     - install
