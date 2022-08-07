@@ -15,7 +15,7 @@
   become: true
   become_user: root
 - name: Add brew to path
-  shell: ln -s {{homebrew_install_path}}/bin/brew {{homebrew_brew_bin_path}} 
+  shell: ln -s /opt/homebrew/Homebrew/bin/brew /usr/local/bin 
 - name: "Install homebrew packages"
   community.general.homebrew:
     name: [
