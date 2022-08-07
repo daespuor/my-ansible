@@ -5,3 +5,4 @@
     - include: ./tasks/dotfiles.yml
     - include: ./tasks/zsh.yml
     - include: ./tasks/node.yml
+    - include: ./tasks/yabai.yml

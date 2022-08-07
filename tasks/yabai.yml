@@ -16,7 +16,8 @@
   tags:
     - install
     - yabai
-- name: Add permissions to scripts
-  shell: chmod +x ~/.config/skhd/scripts/*  
-- name: Run yabai and skhd
-  shell: chmod +x ~/.config/skhd/scripts/*
+- name: Add permissions to yabai & skhd
+  shell: find {{ lookup('env', 'HOME') }}/scripts -type f -exec chmod +x {} \;
+  become: true
+- name: Execute yabai and skhd
+  shell: brew services start yabai && brew services start skhd
