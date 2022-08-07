@@ -15,7 +15,7 @@
   become: true
   become_user: root
 - name: Add brew to path
-  shell: ln -s /opt/homebrew/Homebrew/bin/brew /usr/local/bin
+  shell: ln -s /opt/homebrew/Homebrew/bin/brew /usr/local/bin && chown -R "$USER":admin /usr/local
   become: true
   become_user: root
 - name: "Install homebrew packages"
@@ -35,9 +35,7 @@
     ]
     state: present
     update_homebrew: yes
-    path: '/usr/local/bin:/opt/homebrew/bin'
-    become: true
-    become_user: root
+    path: '/usr/local/bin'
   tags:
     - brew
     - install
