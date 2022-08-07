@@ -35,7 +35,7 @@
     ]
     state: present
     update_homebrew: yes
-    path: /usr/local/bin
+    path: '/usr/local/bin:/opt/homebrew/bin'
   tags:
     - brew
     - install
