@@ -30,6 +30,13 @@
   tags:
     - install
     - yabai
+- name: Give permissions to limelight
+  shell: chmod +x {{ lookup('env', 'HOME') }}/limelight/bin/limelight
+  become: true
+  become_user: root
+  tags:
+    - install
+    - yabai
 - name: Create symlink to limelight
   command: ln -s {{ lookup('env', 'HOME') }}/limelight/bin /usr/local/bin/limelight
   become: true
