@@ -20,6 +20,11 @@
 - name: Add permissions to macOx
   shell: find {{ lookup('env', 'HOME') }}/dotfiles -type f -exec chmod +x {} \;
   become: true
+  become_user: root
+  tags:
+    - install
+    - dotfiles
+    - stow
 - name: Stow dotfiles
   shell: cd $HOME/dotfiles && ./macOx
   tags:
