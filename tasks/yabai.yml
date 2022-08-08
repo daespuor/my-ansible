@@ -20,10 +20,6 @@
   ansible.builtin.git:
     repo: 'https://github.com/koekeishiya/limelight.git'
     dest: "{{ lookup('env', 'HOME') }}/limelight"
-    recursive: yes
-    update: yes
-    accept_hostkey: yes
-    version: main
   tags:
     - install
     - yabai
