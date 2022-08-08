@@ -24,10 +24,20 @@
     update: yes
     accept_hostkey: yes
     version: main
+  tags:
+    - install
+    - yabai
 - name: Install limelight
   shell: make {{ lookup('env', 'HOME') }}/limelight && ln -s {{ lookup('env', 'HOME') }}/limelight/bin /usr/local/bin/limelight
+  become: true
+  become_user: root
+  tags:
+    - install
+    - yabai
 - name: Add permissions to yabai & skhd
   shell: find {{ lookup('env', 'HOME') }}/scripts -type f -exec chmod +x {} \;
   become: true
-- name: Execute yabai and skhd
-  shell: brew services start yabai && brew services start skhd
+  become_user: root
+  tags:
+    - install
+    - yabai
