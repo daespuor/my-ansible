@@ -16,6 +16,16 @@
   tags:
     - install
     - yabai
+- name: Download limelight
+  ansible.builtin.git:
+    repo: 'https://github.com/koekeishiya/limelight.git'
+    dest: "{{ lookup('env', 'HOME') }}/limelight"
+    recursive: yes
+    update: yes
+    accept_hostkey: yes
+    version: main
+- name: Install limelight
+  shell: make {{ lookup('env', 'HOME') }}/limelight && ln -s {{ lookup('env', 'HOME') }}/limelight/bin /usr/local/bin/limelight
 - name: Add permissions to yabai & skhd
   shell: find {{ lookup('env', 'HOME') }}/scripts -type f -exec chmod +x {} \;
   become: true
