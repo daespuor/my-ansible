@@ -45,7 +45,7 @@
     - install
     - yabai
 - name: Add permissions to yabai & skhd
-  shell: find {{ lookup('env', 'HOME') }}/scripts -type f -exec chmod +x {} \;
+  shell: find {{ lookup('env', 'HOME') }}/.config/skhd/scripts -type f -exec chmod +x {} \;
   become: true
   become_user: root
   tags:
