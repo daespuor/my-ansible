@@ -14,8 +14,3 @@
   tags:
     - zsh
     - install
-- name: Source zsh
-  shell: source ~/.zshrc
-  tags:
-    - zsh
-    - install
