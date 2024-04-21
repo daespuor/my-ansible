@@ -1,0 +1,11 @@
+- name: Install Nvim
+  ansible.builtin.git:
+    repo: 'https://github.com/nvim-lua/kickstart.nvim.git'
+    dest: "{{ lookup('env', 'HOME') }}/.config/nvim"
+    recursive: yes
+    update: yes
+    accept_hostkey: yes
+    version: main
+  tags:
+    - nvim
+    - install

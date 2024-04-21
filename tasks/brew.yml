@@ -18,6 +18,7 @@
       'curl',
       'fzf',
       'gpg',
+      'gcc',
       'libtool',
       'libxslt',
       'libyaml',
@@ -36,8 +37,6 @@
     name: "{{ item }}"
   ignore_errors: yes
   with_items:
-    - docker
-    - slack
     - visual-studio-code
     - brave-browser
     - karabiner-elements
