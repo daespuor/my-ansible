@@ -1,6 +1,6 @@
 - name: Install yabai
   community.general.homebrew:
-      name: ['koekeishiya/formulae/yabai']
+      name: ['yabai']
   tags:
     - install
     - yabai
@@ -13,34 +13,6 @@
 - name: Install skhd simple hot key deamon for MacOs
   community.general.homebrew:
       name: ['koekeishiya/formulae/skhd']
-  tags:
-    - install
-    - yabai
-- name: Download limelight
-  ansible.builtin.git:
-    repo: 'https://github.com/koekeishiya/limelight.git'
-    dest: "{{ lookup('env', 'HOME') }}/limelight"
-  tags:
-    - install
-    - yabai
-- name: Install limelight
-  command: chdir={{ lookup('env', 'HOME') }}/limelight make
-  become: true
-  become_user: root
-  tags:
-    - install
-    - yabai
-- name: Give permissions to limelight
-  shell: chmod +x {{ lookup('env', 'HOME') }}/limelight/bin/limelight
-  become: true
-  become_user: root
-  tags:
-    - install
-    - yabai
-- name: Create symlink to limelight
-  command: ln -s {{ lookup('env', 'HOME') }}/limelight/bin/limelight /usr/local/bin/limelight
-  become: true
-  become_user: root
   tags:
     - install
     - yabai
