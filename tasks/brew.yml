@@ -25,7 +25,8 @@
       'tmux',
       'unzip',
       'nvim',
-      'gh'
+      'gh',
+      'pnpm'
     ]
     state: present
     update_homebrew: yes
