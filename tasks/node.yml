@@ -1,14 +1,6 @@
-- name: Install node and npm
-  community.general.homebrew: 
-    name: ['nodejs', 'npm']
-  tags:
-    - node
-    - install
-- name: Install nvm
+- name: Install pnpm 
   ansible.builtin.shell: >
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
-  args:
-    creates: "{{ lookup('env', 'HOME') }}/.nvm/nvm.sh"
+    curl -fsSL https://get.pnpm.io/install.sh | sh -
   tags:
     - node
     - install
