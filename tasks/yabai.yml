@@ -1,6 +1,6 @@
 - name: Install yabai
-  community.general.homebrew:
-      name: ['yabai']
+  ansible.builtin.shell: >
+    brew install koekeishiya/formulae/yabai
   tags:
     - install
     - yabai
