@@ -26,7 +26,6 @@
       'unzip',
       'nvim',
       'gh',
-      'pnpm'
     ]
     state: present
     update_homebrew: yes
