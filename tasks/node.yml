@@ -10,15 +10,3 @@
   tags:
     - node
     - install
-- name: Install corepack
-  community.general.homebrew:
-    name: ['corepack']
-  tags:
-    - node
-    - install
-- name: Enable corepack
-  ansible.builtin.shell: >
-    corepack enable
-  tags:
-    - node
-    - install
