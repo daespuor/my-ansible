@@ -4,8 +4,6 @@
   tags:
     - install
     - dotfiles
-    - stow
-    - nvim
 - name: Cloning .dotfiles
   ansible.builtin.git:
     repo: 'https://github.com/daespuor/dotfiles.git'
@@ -17,8 +15,6 @@
   tags:
     - install
     - dotfiles
-    - stow
-    - nvim
 - name: Add permissions to macOx
   shell: find {{ lookup('env', 'HOME') }}/dotfiles -type f -exec chmod +x {} \;
   become: true
@@ -26,12 +22,8 @@
   tags:
     - install
     - dotfiles
-    - stow
-    - nvim
 - name: Stow dotfiles
   shell: cd $HOME/dotfiles && ./macOx
   tags:
     - install
     - dotfiles
-    - stow
-    - nvim

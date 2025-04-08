@@ -2,8 +2,5 @@
 - hosts: localhost
   tasks:
     - include: ./tasks/brew.yml
-    - include: ./tasks/nvim.yml
     - include: ./tasks/dotfiles.yml
-    - include: ./tasks/zsh.yml
     - include: ./tasks/node.yml
-    - include: ./tasks/yabai.yml

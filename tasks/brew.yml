@@ -16,15 +16,12 @@
     name: [
       'coreutils',
       'curl',
-      'fzf',
       'gpg',
       'gcc',
       'libtool',
       'libxslt',
       'libyaml',
-      'tmux',
       'unzip',
-      'nvim',
       'gh',
     ]
     state: present
@@ -38,7 +35,7 @@
   ignore_errors: yes
   with_items:
     - visual-studio-code
-    - karabiner-elements
+    - hammerspoon
   tags:
     - install
     - brew
